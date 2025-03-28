@@ -18,7 +18,7 @@ app.use(express.json()); // Parse JSON bodies to all routes
 
 //Routes
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World! this server was made by express CLI");
+  res.send("Hello World! this server was made by express CLI by Maniii");
 });
 
 app.use("/api/usage", apiUsageRoute);
