@@ -1,7 +1,8 @@
 import express, { Request, Response } from 'express';
-import connectDB from './src/configs/connection';
+import connectDB from './configs/connection';
 import { config } from 'dotenv';
 import cors from 'cors';
+import apiUsage from './routes/api-usage';
 
 config();
 const PORT = process.env.PORT || 3000;
@@ -17,13 +18,17 @@ app.get("/",(req : Request , res : Response)=>{
     res.send("Hello World! this server was made by express CLI");
 });
 
-// global catches
+app.use("/api/usage", apiUsage);
+
+
+
+// Global Catches
 app.all("*", (_req, _res) => {
-    _res.status(404).send("Page Not Found");
+    _res.status(404).send("Page Not Foundm, Try a valid route");
 });
 
 async function startServer() {
-    await connectDB();
+    // await connectDB();
     app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
     });
