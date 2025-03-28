@@ -11,7 +11,7 @@ const awsServicesDataController = (req: Request, res: Response) => {
     res.status(200).json(response);
   } catch (error) {
     console.log(
-      "Error @/controllers/aws-services-data -> awsServicesDataController : " +
+      "Error @/controllers/aws-services-data.ts -> awsServicesDataController : " +
         error
     );
     const response = {
