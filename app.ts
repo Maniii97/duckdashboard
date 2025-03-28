@@ -22,11 +22,8 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.use("/api/usage", apiUsageRoute);
-
 app.use("/api/awsdata", awsDataRoute);
-
 app.use("/api/costdata", costDataRoute);
-
 app.use("/api/forecast", forecastRoute);
 
 // Global Catches
