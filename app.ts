@@ -2,7 +2,8 @@ import express, { Request, Response } from 'express';
 import connectDB from './configs/connection';
 import { config } from 'dotenv';
 import cors from 'cors';
-import apiUsage from './routes/api-usage';
+import apiUsageRoute from './routes/api-usage';
+import awsDataRoute from './routes/aws-services-data';
 
 config();
 const PORT = process.env.PORT || 3000;
@@ -18,9 +19,9 @@ app.get("/",(req : Request , res : Response)=>{
     res.send("Hello World! this server was made by express CLI");
 });
 
-app.use("/api/usage", apiUsage);
+app.use("/api/usage", apiUsageRoute);
 
-
+app.use("/api/awsdata", awsDataRoute);
 
 // Global Catches
 app.all("*", (_req, _res) => {
