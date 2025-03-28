@@ -1,17 +1,18 @@
 import { Request, Response } from "express";
-import { apiUsageData } from "../utils/dummy-data";
+import { awsServicesData } from "../utils/dummy-data";
 
-const apiUsageController = async (req: Request, res: Response) => {
+const awsServicesDataController = (req: Request, res: Response) => {
   try {
-    const data = apiUsageData;
+    const data = awsServicesData;
     const response = {
       status: "success",
       data: data,
     };
     res.status(200).json(response);
   } catch (error) {
-    console.error(
-      "Error @/controllers/api-usage.ts -> apiUsageController : " + error
+    console.log(
+      "Error @/controllers/aws-services-data.ts -> awsServicesDataController : " +
+        error
     );
     const response = {
       status: "error",
@@ -21,4 +22,4 @@ const apiUsageController = async (req: Request, res: Response) => {
   }
 };
 
-export default apiUsageController;
+export default awsServicesDataController;
