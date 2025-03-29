@@ -1,15 +1,17 @@
 import request from "supertest";
 import express from "express";
-import awsDataController from "../controllers/aws-services-data";
+import apiUsageController from "../../controllers/trends/api-usage";
 
 const app = express();
 app.use(express.json());
 
-app.use("/api/awsdata", awsDataController);
+const route = "/api/usage";
 
-describe("GET awsdata", () => {
+app.use(route, apiUsageController); 
+
+describe(`GET ${route}`, () => {
   it("should return api usage data with status 200", async () => {
-    const response = await request(app).get("/api/awsdata");
+    const response = await request(app).get(route);
     expect(response.status).toBe(200);
   });
 });

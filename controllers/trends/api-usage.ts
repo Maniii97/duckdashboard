@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { apiUsageData } from "../utils/dummy-data";
+import { apiUsageData } from "../../utils/dummy-data";
 
 const apiUsageController = async (req: Request, res: Response) => {
   try {
@@ -11,7 +11,7 @@ const apiUsageController = async (req: Request, res: Response) => {
     res.status(200).json(response);
   } catch (error) {
     console.error(
-      "Error @/controllers/api-usage.ts -> apiUsageController : " + error
+      "Error @/controllers/trends/api-usage.ts -> apiUsageController : " + error
     );
     const response = {
       status: "error",

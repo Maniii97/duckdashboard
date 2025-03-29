@@ -1,5 +1,5 @@
 import express from "express";
-import costDataController from "../controllers/cost-data";
+import costDataController from "../../controllers/trends/cost-data";
 
 const router = express.Router();
 

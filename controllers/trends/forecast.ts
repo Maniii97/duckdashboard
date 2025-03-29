@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { forecastData } from "../utils/dummy-data";
+import { forecastData } from "../../utils/dummy-data";
 
 const forecastController = (req: Request, res: Response) => {
   try {
@@ -10,7 +10,7 @@ const forecastController = (req: Request, res: Response) => {
     };
     return res.status(200).json(response);
   } catch (error) {
-    console.log("Error @/controllers/forecast.ts -> forecastController", error);
+    console.log("Error @/controllers/trends/forecast.ts -> forecastController", error);
     const response = {
       status: "error",
       message: "Error occurred while fetching forecast data",
