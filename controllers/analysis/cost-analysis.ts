@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { apiUsageData } from "../utils/dummy-data";
+import { analyzeCosts } from "../../utils/analysis";
 
-const apiUsageController = async (req: Request, res: Response) => {
+const costAnalysis = async (req: Request, res: Response) => {
   try {
-    const data = apiUsageData;
+    const data = analyzeCosts;
     const response = {
       status: "success",
       data: data,
@@ -11,7 +11,7 @@ const apiUsageController = async (req: Request, res: Response) => {
     res.status(200).json(response);
   } catch (error) {
     console.error(
-      "Error @/controllers/api-usage.ts -> apiUsageController : " + error
+      "Error @/controllers/trends/api-usage.ts -> apiUsageController : " + error
     );
     const response = {
       status: "error",
@@ -21,4 +21,4 @@ const apiUsageController = async (req: Request, res: Response) => {
   }
 };
 
-export default apiUsageController;
+export default costAnalysis;

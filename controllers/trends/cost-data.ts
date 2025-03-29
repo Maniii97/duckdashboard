@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { costData } from "../utils/dummy-data";
+import { costData } from "../../utils/dummy-data";
 
 const costDataController = (req: Request, res: Response) => {
   try {
@@ -11,7 +11,7 @@ const costDataController = (req: Request, res: Response) => {
     res.status(200).json(response);
   } catch (error) {
     console.error(
-      "Error @/controllers/cost-data.ts -> costDataController : " + error
+      "Error @/controllers/trends/cost-data.ts -> costDataController : " + error
     );
     const response = {
       status: "error",

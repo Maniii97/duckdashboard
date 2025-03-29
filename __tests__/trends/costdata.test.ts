@@ -1,15 +1,17 @@
 import request from "supertest";
 import express from "express";
-import forecastController from "../controllers/forecast";
+import costDataController from "../../controllers/trends/cost-data";
 
 const app = express();
 app.use(express.json());
 
-app.use("/api/forecast", forecastController);
+const route = "/api/costdata";
 
-describe("GET /api/forecast", () => {
+app.use(route, costDataController);
+
+describe(`GET ${route}`, () => {
   it("should return api usage data with status 200", async () => {
-    const response = await request(app).get("/api/forecast");
+    const response = await request(app).get(route);
     expect(response.status).toBe(200);
   });
 });

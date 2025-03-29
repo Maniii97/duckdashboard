@@ -7,7 +7,7 @@ const random = (min: number, max: number) => {
 
 // Generate mock cost data for the last 15 days
 const costData: CostData[] = Array.from({ length: 15 }).map((_, i) => ({
-  timestamp: format(addDays(new Date(), -14 + i), "yyyy-MM-dd"),
+  timestamp: format(addDays(new Date(), -14 + i), "MMM-dd"),
   aws: random(800, 1200),
   gcp: random(600, 900),
   azure: random(400, 700),
@@ -17,7 +17,7 @@ const costData: CostData[] = Array.from({ length: 15 }).map((_, i) => ({
 // Generate mock AWS services data for the last 15 days
 const awsServicesData: AWSServiceData[] = Array.from({ length: 15 }).map(
   (_, i) => ({
-    timestamp: format(addDays(new Date(), -14 + i), "yyyy-MM-dd"),
+    timestamp: format(addDays(new Date(), -14 + i), "MMM-dd"),
     ec2: random(400, 600),
     s3: random(100, 200),
     lambda: random(150, 250),
@@ -28,11 +28,11 @@ const awsServicesData: AWSServiceData[] = Array.from({ length: 15 }).map(
 
 // Generate mock forecast data for the next 7 days
 const forecastData: CostData[] = Array.from({ length: 7 }).map((_, i) => ({
-  timestamp: format(addDays(new Date(), i + 1), "yyyy-MM-dd"),
+  timestamp: format(addDays(new Date(), i + 1), "MMM-dd"),
   aws: random(900, 1400),
   gcp: random(700, 1000),
   azure: random(500, 800),
-  utilization: random(65, 90),
+  utilization: random(60, 90),
 }));
 
 // Generate mock API usage data

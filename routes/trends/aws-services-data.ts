@@ -1,5 +1,5 @@
 import express from "express";
-import awsServicesDataController from "../controllers/aws-services-data";
+import awsServicesDataController from "../../controllers/trends/aws-services-data";
 
 const router = express.Router();
 
