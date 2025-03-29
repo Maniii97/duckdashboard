@@ -37,20 +37,20 @@ Returns forecast predictions for reserved instances.
 
 ## Project Structure
 ```
-📂 __tests__/        # Unit & integration tests
-📂 configs/          # Configuration settings (DB, ENV, etc.)
-📂 controllers/      # Express route handlers
-📂 middlewares/      # Express middlewares
-📂 models/           # Database models (if using ORM)
-📂 repositories/     # Handles database queries
-📂 routes/           # API routes
-📂 utils/            # Utility functions
-📜 .env              # Environment variables
-📜 Dockerfile        # Docker setup
-📜 jest.config.js    # Jest configuration
-📜 package.json      # Dependencies
-📜 tsconfig.json     # TypeScript configuration
-📜 app.ts            # Express server instance
+📂 .github/workflows/ # CD Pipeline for automated deployment
+📂 __tests__/         # Unit & integration tests
+📂 configs/           # Configuration settings (DB, ENV, etc.)
+📂 controllers/       # Express route handlers
+📂 middlewares/       # Express middlewares
+📂 models/            # Database models
+📂 routes/            # API routes
+📂 utils/             # Utility functions
+📜 .env               # Environment variables
+📜 Dockerfile         # Docker setup
+📜 jest.config.js     # Jest configuration
+📜 package.json       # Dependencies
+📜 tsconfig.json      # TypeScript configuration
+📜 app.ts             # Express server instance
 ```
 
 ## Docker Setup
