@@ -3,6 +3,6 @@ import forecastAnalysis from "../../controllers/analysis/forecast-analysis";
 
 const router = express.Router();
 
-router.get("/", forecastAnalysis);
+router.post("/", forecastAnalysis);
 
 export default router;

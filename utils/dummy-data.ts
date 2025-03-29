@@ -11,7 +11,7 @@ const costData: CostData[] = Array.from({ length: 15 }).map((_, i) => ({
   aws: random(800, 1200),
   gcp: random(600, 900),
   azure: random(400, 700),
-  utilization: random(60, 95),
+  utilization: random(50, 60),
 }));
 
 // Generate mock AWS services data for the last 15 days

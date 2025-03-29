@@ -3,6 +3,6 @@ import costAnalysis from "../../controllers/analysis/cost-analysis";
 
 const router = express.Router();
 
-router.get("/", costAnalysis);
+router.post("/", costAnalysis);
 
 export default router;

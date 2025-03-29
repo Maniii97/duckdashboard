@@ -3,7 +3,8 @@ import { analyzeCosts } from "../../utils/analysis";
 
 const costAnalysis = async (req: Request, res: Response) => {
   try {
-    const data = analyzeCosts;
+    const costData = req.body.costData;
+    const data = analyzeCosts(costData);
     const response = {
       status: "success",
       data: data,

@@ -3,7 +3,10 @@ import { analyzeForecast } from "../../utils/analysis";
 
 const forecastAnalysis = async (req: Request, res: Response) => {
   try {
-    const data = analyzeForecast;
+    const historicalData = req.body.historicalData;
+    const costData = req.body.costData;
+    
+    const data = analyzeForecast(historicalData, costData);
     const response = {
       status: "success",
       data: data,
