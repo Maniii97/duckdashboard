@@ -35,6 +35,24 @@ GET /api/forecast
 ```
 Returns forecast predictions for reserved instances.
 
+### 5. Analyse Cost Data
+```http
+POST /api/analysis/cost
+```
+Returns the analysis made on the Cost Data. 
+
+### 6. Analyse Forecast Data
+```http
+POST /api/analysis/forecast
+```
+Returns the analysis made on the Forecast Data.
+
+### 7. Chat
+```http
+POST /api/chat
+```
+Returns the AI repsonse to the given query, instructed to analyse the data before answering. 
+
 ## Project Structure
 ```
 📂 .github/workflows/ # CD Pipeline for automated deployment
@@ -54,10 +72,10 @@ Returns forecast predictions for reserved instances.
 ```
 
 ## Docker Setup
-Build and run the Docker container:
+Build and run the Docker container :
 ```sh
 docker build -t dashboard-backend .
-docker run -p -d 3000:3000 dashboard-backend
+docker run -p -d 3000:3000 --env-file=.env dashboard-backend
 ```
 
 ## Deployment on AWS
