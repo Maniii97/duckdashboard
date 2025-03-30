@@ -8,6 +8,7 @@ import costDataRoute from "./routes/trends/cost-data";
 import forecastRoute from "./routes/trends/forecast";
 import costAnalysisRoute from "./routes/analysis/cost-analysis";
 import forecastAnalysisRoute from "./routes/analysis/forecast-analysis";
+import chatRoute from "./routes/chat/chat";
 
 config();
 const PORT = process.env.PORT || 3000;
@@ -29,6 +30,7 @@ app.use("/api/costdata", costDataRoute);
 app.use("/api/forecast", forecastRoute);
 app.use("/api/analysis/forecast", forecastAnalysisRoute);
 app.use("/api/analysis/cost", costAnalysisRoute);
+app.use("/api/chat", chatRoute);
 
 // Global Catches
 app.all("*", (_req, _res) => {
