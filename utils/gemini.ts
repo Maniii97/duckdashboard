@@ -5,7 +5,8 @@ config();
 
 const apiKey = process.env.GEMINI_API_KEY as string;
 
-const instruction = "";
+const instruction = "You will be given a question by a user followed by a dataset. Analyse the data and answer the question \
+it is based on cloud cost data. The data is in the form of {costdata, awsServicesData, ApiusageData};";
 
 const generativeAI = new GoogleGenerativeAI(apiKey);
 const model = generativeAI.getGenerativeModel({
