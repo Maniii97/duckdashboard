@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  backend:
+    build: .
+    container_name: DashBoard_Backend
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      # mounts the current directory to /app in the container enabling live reload
+      - .:/app
