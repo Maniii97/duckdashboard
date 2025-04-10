@@ -23,11 +23,6 @@ export interface APIUsage {
   cost: number;
 }
 
-export interface ChatMessage {
-  role: "user" | "assistant";
-  content: string;
-}
-
 export interface CostAnalysis {
   totalCosts: number;
   avgUtilization: number;

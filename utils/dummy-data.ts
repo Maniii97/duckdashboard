@@ -1,13 +1,18 @@
 import { addDays, format } from "date-fns";
+import { formatInTimeZone } from "date-fns-tz";
 import { CostData, APIUsage, AWSServiceData } from "../types";
+
+const timeZone = "Asia/Kolkata";
 
 const random = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
+const today = new Date();
+
 // Generate mock cost data for the last 15 days
 const costData: CostData[] = Array.from({ length: 15 }).map((_, i) => ({
-  timestamp: format(addDays(new Date(), -14 + i), "MMM-dd"),
+  timestamp: formatInTimeZone(addDays(today, -14 + i), timeZone, "MMM-dd"),
   aws: random(800, 1200),
   gcp: random(600, 900),
   azure: random(400, 700),
