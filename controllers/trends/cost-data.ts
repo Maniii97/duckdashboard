@@ -3,7 +3,7 @@ import { costData } from "../../utils/dummy-data";
 
 const costDataController = (req: Request, res: Response) => {
   try {
-    const data = costData;
+    const data = costData();
     const response = {
       status: "success",
       data: data,

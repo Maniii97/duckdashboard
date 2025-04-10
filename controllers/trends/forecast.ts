@@ -3,7 +3,7 @@ import { forecastData } from "../../utils/dummy-data";
 
 const forecastController = (req: Request, res: Response) => {
   try {
-    const data = forecastData;
+    const data = forecastData();
     const response = {
       status: "success",
       data: data,
