@@ -11,34 +11,38 @@ const random = (min: number, max: number) => {
 const today = new Date();
 
 // Generate mock cost data for the last 15 days
-const costData: CostData[] = Array.from({ length: 15 }).map((_, i) => ({
-  timestamp: formatInTimeZone(addDays(today, -14 + i), timeZone, "MMM-dd"),
-  aws: random(800, 1200),
-  gcp: random(600, 900),
-  azure: random(400, 700),
-  utilization: random(50, 60),
-}));
+const costData = (): CostData[] => {
+  return Array.from({ length: 15 }).map((_, i) => ({
+    timestamp: formatInTimeZone(addDays(today, -14 + i), timeZone, "MMM-dd"),
+    aws: random(800, 1200),
+    gcp: random(600, 900),
+    azure: random(400, 700),
+    utilization: random(50, 60),
+  }));
+};
 
 // Generate mock AWS services data for the last 15 days
-const awsServicesData: AWSServiceData[] = Array.from({ length: 15 }).map(
-  (_, i) => ({
+const awsServicesData = (): AWSServiceData[] => {
+  return Array.from({ length: 15 }).map((_, i) => ({
     timestamp: format(addDays(new Date(), -14 + i), "MMM-dd"),
     ec2: random(400, 600),
     s3: random(100, 200),
     lambda: random(150, 250),
     rds: random(150, 250),
     utilization: random(60, 95),
-  })
-);
+  }));
+};
 
 // Generate mock forecast data for the next 7 days
-const forecastData: CostData[] = Array.from({ length: 7 }).map((_, i) => ({
-  timestamp: format(addDays(new Date(), i + 1), "MMM-dd"),
-  aws: random(900, 1400),
-  gcp: random(700, 1000),
-  azure: random(500, 800),
-  utilization: random(60, 90),
-}));
+const forecastData = (): CostData[] => {
+  return Array.from({ length: 7 }).map((_, i) => ({
+    timestamp: format(addDays(new Date(), i + 1), "MMM-dd"),
+    aws: random(900, 1400),
+    gcp: random(700, 1000),
+    azure: random(500, 800),
+    utilization: random(60, 90),
+  }));
+};
 
 // Generate mock API usage data
 const apiUsageData: APIUsage[] = [

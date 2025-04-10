@@ -3,7 +3,7 @@ import { awsServicesData } from "../../utils/dummy-data";
 
 const awsServicesDataController = (req: Request, res: Response) => {
   try {
-    const data = awsServicesData;
+    const data = awsServicesData();
     const response = {
       status: "success",
       data: data,
